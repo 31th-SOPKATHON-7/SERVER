@@ -29,9 +29,25 @@ const getUserAll = async (req: Request, res: Response) => {
     .json({ status: 200, message: "홈 화면 조회 성공", data });
 };
 
+const updateUser = async (req: Request, res: Response) => {
+  const { name } = req.body;
+  const { userId } = req.params;
+  if (!name) {
+    return res.status(400).json({ status: 400, message: "유저 업데이트 실패" });
+  }
+  const updateUser = await userService.updateUser(+userId, name);
+  const data = {
+    updateUser,
+  };
+  return res
+    .status(200)
+    .json({ status: 200, message: "유저 업데이트 성공", name });
+};
+
 const userController = {
   getUser,
   getUserAll,
+  updateUser,
 };
 
 export default userController;

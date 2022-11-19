@@ -17,9 +17,22 @@ const getUserAll = async () => {
   return user;
 };
 
+const updateUser = async (userId: number, name: string) => {
+  const data = await prisma.user.update({
+    where: {
+      userId: userId,
+    },
+    data: {
+      nickName: name,
+    },
+  });
+  return data;
+};
+
 const userService = {
   getUser,
   getUserAll,
+  updateUser,
 };
 
 export default userService;

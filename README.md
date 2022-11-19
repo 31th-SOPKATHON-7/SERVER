@@ -146,7 +146,50 @@ model User {
 }
 ```
 </div>
+</details>
 
+<br/>
+
+<details>
+<summary> <h3> 🔶 package.json (dependencies module)</h3></summary>   
+<div markdown="1">   
+
+```
+{
+  "name": "Server",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/31th-SOPKATHON-7/Server.git",
+  "author": "ehdwoKIM <kinbell19@gmail.com>",
+  "license": "MIT",
+  "scripts": {
+    "dev": "nodemon",
+    "build": "tsc && node dist",
+    "db:pull": "npx prisma db pull",
+    "db:push": "npx prisma db push",
+    "generate": "npx prisma generate"
+  },
+  "dependencies": {
+    "@prisma/client": "^4.6.1",
+    "bcryptjs": "^2.4.3",
+    "express": "^4.18.2",
+    "express-validator": "^6.14.2",
+    "prisma": "^4.6.1",
+    "typescript": "^4.9.3"
+  },
+  "devDependencies": {
+    "@types/bcryptjs": "^2.4.2",
+    "@types/express": "^4.17.14",
+    "@types/express-validator": "^3.0.0",
+    "@types/node": "^18.11.9",
+    "nodemon": "^2.0.20",
+    "ts-node": "^10.9.1"
+  }    
+}
+```
+</div>
+</details>
+ 
 <br/>
 
 ### 📌 Server Architecture

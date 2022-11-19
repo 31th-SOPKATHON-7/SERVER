@@ -22,7 +22,7 @@ const getUser = async (req: Request, res: Response) => {
 const getUserAll = async (req: Request, res: Response) => {
   const user = await userService.getUserAll();
   const data = {
-      user,
+    user,
   };
   return res
     .status(200)

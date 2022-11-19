@@ -20,10 +20,6 @@ const getUserAll = async () => {
 const userService = {
   getUser,
   getUserAll,
-
-const userService = {
-  getUser,
-
 };
 
 export default userService;

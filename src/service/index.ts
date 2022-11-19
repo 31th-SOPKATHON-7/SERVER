@@ -1,5 +1,4 @@
 import userService from "./userService";
+import quizService from "./quizService";
 
-export {
-    userService
-};
+export { userService, quizService };

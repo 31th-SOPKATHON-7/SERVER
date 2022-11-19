@@ -35,6 +35,11 @@
 
 <br/>
 
+### ERD
+![drawSQL-export-2022-11-20_04_28](https://user-images.githubusercontent.com/102947253/202871790-f58e3fa4-23fa-441c-a3b8-657b3dcf9f74.png)
+
+
+
 
 <br/>
 
@@ -111,7 +116,36 @@ issue tracker: 이슈 번호 (option)
 |_ 📁 test
 |_ index.ts
 ```
+<details>
+<summary> <h3> schema.prisma </h3></summary>   
+<div markdown="1">   
 
+```
+{
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  userId    Int     @id @unique @default(autoincrement())
+  name      String  @db.VarChar(10)
+  nickName  String  @db.VarChar(10)
+  part      String? @db.VarChar(10)
+  ybob      String? @db.VarChar(10)
+  age       Int?
+  mbti      String? @db.VarChar(10)
+  major     String? @db.VarChar(10)
+  gender    String? @db.VarChar(10)
+  photoUrl  String  @db.VarChar(100)
+  samdae    Int?
+}
+```
+</div>
 
 <br/>
 

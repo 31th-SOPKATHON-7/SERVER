@@ -14,12 +14,26 @@ const getUser = async (req: Request, res: Response) => {
       ...user,
     },
   };
+  return res
+    .status(200)
+    .json({ status: 200, message: "개인 화면 조회 성공", data });
+};
 
-  return res.status(200).json({ status: 200, message: "유저 조회 성공", data });
+const getUserAll = async (req: Request, res: Response) => {
+  const user = await userService.getUserAll();
+  const data = {
+    user: {
+      ...user,
+    },
+  };
+  return res
+    .status(200)
+    .json({ status: 200, message: "홈 화면 조회 성공", data });
 };
 
 const userController = {
   getUser,
+  getUserAll,
 };
 
 export default userController;

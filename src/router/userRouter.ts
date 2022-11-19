@@ -4,5 +4,6 @@ import { userController } from "../controller";
 const router: Router = Router();
 
 router.get("/:userId", userController.getUser);
+router.get("", userController.getUserAll);
 
 export default router;

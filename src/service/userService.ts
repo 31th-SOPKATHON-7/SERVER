@@ -12,8 +12,18 @@ const getUser = async (userId: number) => {
   return user;
 };
 
+const getUserAll = async () => {
+  const user = await prisma.user.findMany();
+  return user;
+};
+
 const userService = {
   getUser,
+  getUserAll,
+
+const userService = {
+  getUser,
+
 };
 
 export default userService;

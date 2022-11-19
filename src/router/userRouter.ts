@@ -7,5 +7,6 @@ const router: Router = Router();
 router.get("/:userId", userController.getUser);
 router.get("", userController.getUserAll);
 router.get("/quiz/:userId", quizController.getAllQuiz);
+router.patch("/:userId/edit", userController.updateUser);
 
 export default router;
